@@ -5,6 +5,25 @@ import "../pages/welcome.css";
 
 class Welcome extends Component{
     componentDidMount(){
+        $('#play-video').on('click', function(e){
+            e.preventDefault();
+            $('#video-overlay').addClass('open');
+            $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>');
+          });
+          
+          $('.video-overlay, .video-overlay-close').on('click', function(e){
+            e.preventDefault();
+            close_video();
+          });
+          
+          $(document).keyup(function(e){
+            if(e.keyCode === 27) { close_video(); }
+          });
+          
+          function close_video() {
+            $('.video-overlay.open').removeClass('open').find('iframe').remove();
+          };
+          
         (function ($) {
             $.fn.countTo = function (options) {
                 options = options || {};
@@ -107,7 +126,10 @@ class Welcome extends Component{
     render(){
         return (
             <div>
-            
+            <div id="video-overlay" class="video-overlay">
+                <a class="video-overlay-close">&times;</a>
+            </div>
+
             <main className="main">
             <section className="section banner banner-section">
                 <div className="container banner-column">
@@ -129,26 +151,27 @@ class Welcome extends Component{
                         Your Polaris for Developement
                         </p>
                         </div></div></div>
-
+                        
                         <div className="itemWrapper  "><div className="wordContainerdup"><div className="itemdleft">
                                     <button className="btn btn-darken btn-inline">
                                     Our Projects<i className="bx bx-right-arrow-alt"></i>
-                                    </button>
+                                    </button>    
                         </div></div></div>
+                        
                     </div>
-
                     <div className="itemWrapper  "><div className="wordContainerdup"><div className="itemdright">
                     <img className="banner-image" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="banner"></img>
                     </div></div></div>
 
-                    
+                    <a id="play-video" class="video-play-button" href="#"> <span></span></a>
+
                         <div className="banner-links">
-                            <a href="#" title=""><i className="bx bxl-facebook"></i></a>
-                            <a href="#" title=""><i className="bx bxl-instagram"></i></a>
-                            <a href="#" title=""><i className="bx bxl-twitter"></i></a>
-                            <a href="#" title=""><i className="bx bxl-youtube"></i></a>
+                            <a href="#" title=""><i className="bx bxl-facebook banner-fb"></i></a>
+                            <a href="#" title=""><i className="bx bxl-instagram banner-ins"></i></a>
+                            <a href="#" title=""><i className="bx bxl-twitter banner-tw"></i></a>
+                            <a href="#" title=""><i className="bx bxl-youtube banner-yt"></i></a>
                         </div>
-                    
+
 
                 </div>
             
@@ -162,7 +185,7 @@ class Welcome extends Component{
                     <div className="counter col_fourth" >
                     <i className="fa fa-code fa-2x"></i>
                     <div className="inos">
-                        <h2 className=" count-title timer count-number" data-to="5" data-speed="3000"></h2><h3 className="info">+</h3>
+                        <h2 className=" count-title timer count-number" data-to="5" data-speed="3400"></h2><h3 className="info">+</h3>
                     </div>
                     <p className="count-text ">Projects Done</p>
                     </div>
@@ -170,7 +193,7 @@ class Welcome extends Component{
                     <div className="counter col_fourth">
                         <i className="fa fa-coffee fa-2x"></i>
                         <div className="inos">
-                            <h2 className="timer count-title count-number" data-to="2" data-speed="3000"></h2><h3 className="info">years</h3>
+                            <h2 className="timer count-title count-number" data-to="5" data-speed="3400"></h2><h3 className="info">months</h3>
                         </div>
                          <p className="count-text ">Experience</p>
                     </div>
@@ -178,7 +201,7 @@ class Welcome extends Component{
                     <div className="counter col_fourth">
                     <i className="fa fa-lightbulb-o fa-2x"></i>
                     <div className="inos">
-                    <h2 className="timer count-title count-number" data-to="10" data-speed="3000"></h2><h3 className="info">+</h3>
+                    <h2 className="timer count-title count-number" data-to="10" data-speed="3400"></h2><h3 className="info">+</h3>
                     </div>
                     <p className="count-text ">People under us</p>
                     </div>                
