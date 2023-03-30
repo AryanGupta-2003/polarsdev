@@ -16,16 +16,14 @@ const Navbar = () => {
         //         $(this).toggleClass('open');
         //     });
         // });
-        $(document).click(function(){
-            $('#nav-icon1').click(function(){
-                $(this).toggleClass('open');
-            });
-        });
         setShowMediaIcons(!showMediaIcons);
+        setnavanim(!navanim);
+        console.log(navanim);
     }
     
     
   const [showMediaIcons, setShowMediaIcons] = useState(false);
+  const [navanim, setnavanim] = useState(true);
   return (
     <>
       <nav className="main-nav">
@@ -41,7 +39,7 @@ const Navbar = () => {
         <div
           className={
             showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
-          }>
+          } onMouseLeave={jQueryCode}>
           <ul>
             <li>
               <a href="#">Home</a>
@@ -60,35 +58,13 @@ const Navbar = () => {
 
         {/* 3rd social media links */}
         <div className="social-media">
-          <ul className="social-media-desktop">
-            <li>
-              <a
-                href="#"
-                target="_blank">
-                <FaFacebookSquare className="facebook" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                target="_blank">
-                <FaInstagramSquare className="instagram" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                target="_blank">
-                <FaYoutubeSquare className="youtube" />
-              </a>
-            </li>
-          </ul>
+         
 
           {/* hamburget menu start  */}
           <div className="hamburger-menu ">
-            <a href="#" className="ham-color" onClick={jQueryCode}>
+            <a href="#" className="ham-color" onMouseEnter={jQueryCode} onClick={jQueryCode}>
               {/* <GiHamburgerMenu /> */}
-              <div id="nav-icon1">
+              <div className={navanim?"nav-icon1":"nav-icon1 open"}>
                 <span></span>
                 <span></span>
                 <span></span>
