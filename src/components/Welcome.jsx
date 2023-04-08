@@ -162,14 +162,15 @@ class Welcome extends Component{
                     <div className="itemWrapper  "><div className="wordContainerdup"><div className="itemdright">
                     <img className="banner-image" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="banner"></img>
                     </div></div></div>
-
-                    <a id="play-video" class="video-play-button" href="#"> <span></span></a>
+                    
+                    <div className="itemdright">
+                        <a id="play-video" class="video-play-button" href="#"> <span></span></a>
+                    </div>
 
                         <div className="banner-links">
                             <a href="#" title=""><i className="bx bxl-facebook banner-fb"></i></a>
                             <a href="#" title=""><i className="bx bxl-instagram banner-ins"></i></a>
                             <a href="#" title=""><i className="bx bxl-twitter banner-tw"></i></a>
-                            <a href="#" title=""><i className="bx bxl-youtube banner-yt"></i></a>
                         </div>
 
 

@@ -1,34 +1,94 @@
 import React,{Component} from 'react';
 import "../pages/about.css";
-
-
+import { motion } from "framer-motion"
+import {useInView} from 'react-intersection-observer'
+import { useEffect } from 'react';
+import { useAnimation } from 'framer-motion';
 const About = () =>{
+
+    const {ref,inView}=useInView({
+        threshold: 0.7
+    });
+    const head = useAnimation();
+    const title = useAnimation();
+    const card_left = useAnimation();
+    const card_right= useAnimation();
+    const button= useAnimation();
+    const divider= useAnimation();
+    useEffect(()=>{
+        if(inView){
+            head.start({
+                x:0,
+                transition:{
+                    type: 'spring' , duration:1,bounce:0.3
+                }
+            });
+            title.start({
+                x:0,
+                transition:{
+                    type: 'spring' , duration:1,bounce:0.3
+                }
+            });
+            card_left.start({
+                x:0,
+                transition:{
+                    type: 'spring' , duration:1,bounce:0.3
+                }
+            });
+            card_right.start({
+                x:0,
+                transition:{
+                    type: 'spring' , duration:1,bounce:0.3
+                }
+            });
+            button.start({
+                x:0,
+                transition:{
+                    type: 'spring' , duration:1,bounce:0.3
+                }
+            });
+            divider.start({
+                x:0,
+                transition:{
+                    type: 'spring' , duration:1,bounce:0.3
+                }
+            });
+
+        }
+        if(!inView){
+            head.start({x:'-100vw'})
+        }
+        console.log(inView);
+    },[inView]);
+
     return (
         
-        <div className="about-section">
+        <div ref={ref} className="about-section">
             <div className="content">
-            <h3 className="content-heading">ABOUT POLARSDEV</h3>
-            <h3 className="content-catch">PASSIONATELY CREATIVE</h3>
+            <motion.div className="content-heading" animate={head}>
+            ABOUT POLARSDEV
+            </motion.div>
+                <div className="content-catch">PASSIONATELY CREATIVE</div>
+                <div className="content-para"><div className="para-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae obcaecati aliquid perspiciatis dolor. Nulla placeat exercitationem incidunt adipisci fugiat, modi, veniam consectetur rerum quia esse iusto quae, accusamus voluptate neque reiciendis quaerat totam impedit pariatur ducimus odio alias facere consequuntur. Quam ea officia iste omnis eveniet velit dolores dolore molestias? Distinctio nisi amet illo culpa consequatur blanditiis, ratione, commodi ab necessitatibus accusamus earum repudiandae consequuntur debitis, repellendus tempora itaque.</div></div>
+
                 <div class="card-container">
                     <div class="card">
-                        <h2>Background</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsum voluptatem unde laboriosam iure suscipit vero minus, nemo architecto, facere asperiores labore facilis perspiciatis quidem corrupti natus maiores eveniet eum. Numquam sint velit minima in illo exercitationem omnis, veniam odio facere, totam ipsam impedit voluptatibus. Corporis nobis possimus at dolor.</p>
+                        <h2 className="card-heading">BACKGROUND</h2>
+                        <p className="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsum voluptatem unde laboriosam iure suscipit vero minus, nemo architecto, facere asperiores labore facilis perspiciatis quidem corrupti natus maiores eveniet eum. Numquam sint velit minima in illo exercitationem omnis, veniam odio facere, totam ipsam impedit voluptatibus. Corporis nobis possimus at dolor.</p>
                     </div>
                     <span className="divider"></span>
                     <div class="card">
-                        <h2>Goals</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quas placeat minima corporis quae tenetur nemo earum optio, corrupti quibusdam obcaecati! Maiores, commodi. Cum recusandae tempore iure ex blanditiis eaque?</p>
-                        <ul class="goals">
-                        <li>Goal 1</li>
-                        <li>Goal 2</li>
-                        <li>Goal 3</li>
-                
-                        </ul>
+                        <h2 className="card-heading">GOALS</h2>
+                        <p className="card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quas placeat minima corporis quae tenetur nemo earum optio, corrupti quibusdam obcaecati! Maiores, commodi. Cum recusandae tempore iure ex blanditiis eaque?</p>
+                        
                     </div>
+                    
                 </div>
+                <button className="btn btn-darken btn-inline btn-about">
+                        Our Projects<i className="bx bx-right-arrow-alt"></i>
+                    </button>
             </div>
         </div>
-      
         );
     }
     

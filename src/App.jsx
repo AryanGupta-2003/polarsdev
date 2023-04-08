@@ -6,16 +6,14 @@ import {
 } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar,Welcome,Footer,About,Hireus,Project,Team,Testi,Wedo } from './components'
-
+import {Scrollbars} from 'react-custom-scrollbars';
 const App=() =>{
   
 
   return (
     <Router>
-    <div>
     
-          
-          
+    <div className="app">
       <div>
       <Navbar/>
           <Welcome/>
@@ -29,6 +27,7 @@ const App=() =>{
          
       </div>
     </div>
+    
     </Router>
   )
 }

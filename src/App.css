@@ -5,6 +5,8 @@
   text-align: center;
 }
 
+/* hide scrollbar for chrome, safari and opera */
+
 .logo {
   height: 6em;
   padding: 1.5em;
