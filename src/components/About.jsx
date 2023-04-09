@@ -7,7 +7,7 @@ import { useAnimation } from 'framer-motion';
 const About = () =>{
 
     const {ref,inView}=useInView({
-        threshold: 0.5
+        threshold: 0.45
     });
     const head = useAnimation();
     const title = useAnimation();
