@@ -1,0 +1,138 @@
+.wedo-section{
+    height:auto;
+    overflow: hidden !important;
+}
+
+.title{
+    font-size: 25px;
+    color:#ffab07;
+    text-align: center !important;
+    margin-bottom: 1%;
+    margin-top: 4%;
+
+}
+
+.catch{
+    margin-bottom: 1%;
+
+    font-size: 50px;
+    color:azure;
+    font-weight: 800;
+    text-align: center !important;
+}
+
+
+.describe{
+    font-size: 18px;
+    color:azure;
+    font-weight: 300;
+    text-align: center !important;
+
+}*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.cards-wedo {
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+}
+.head-img {
+    margin-top:10% ;
+    margin-left:10% ;
+    float: left;
+    max-width: 20% !important;
+    vertical-align: middle;
+    transition:  0.4s ease-in-out;
+    height: 70px !important;
+    width:70px !important;
+    margin-bottom: 10px ;
+}
+.head-img:hover{
+    height: 80px !important;
+    width:80px !important;
+    transition:  0.4s ease-in-out;
+    padding:0px;
+    margin-bottom: 0px;
+}
+
+
+
+.cards-wedo {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+.cards__item {
+    display: flex;
+}
+@media (min-width: 40rem) {
+    .cards__item {
+        width: 50%;
+   }
+}
+@media (min-width: 56rem) {
+    .cards__item {
+        width: 33.3333%;
+   }
+}
+.card-wedo {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width:90%;
+    border:solid 2px ;
+}
+.card-odd{
+    border-color: #0ab291 ;
+}
+.card-even{
+    border-color: #c0c3c3 ;
+}
+.card-odd:hover{
+    border-color: #c0c3c3 ;
+}
+.card-even:hover{
+    border-color: #0ab291 ;
+}
+.card__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__title {
+    margin-top:5% ;
+    margin-left: 10%;
+    margin-bottom: 7%;
+    margin-bottom: 0% important;
+    float: left;
+    font-size: 1.4vw;
+    font-weight: 500;
+    color: #d3d2d2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.card__text {
+    margin-top: -2% !important;
+    margin:10% ;
+    float: left;
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #d3d2d2;
+    font-size: 1vw;
+    font-weight: 300;
+}
+
