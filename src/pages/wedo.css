@@ -52,7 +52,7 @@
     width:70px !important;
     margin-bottom: 10px ;
 }
-.head-img:hover{
+.cards__item:hover .head-img{
     height: 80px !important;
     width:80px !important;
     transition:  0.4s ease-in-out;

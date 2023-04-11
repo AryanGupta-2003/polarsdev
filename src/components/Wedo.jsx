@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 import "../pages/wedo.css";
 import { motion } from "framer-motion"
@@ -61,15 +60,26 @@ const Wedo = () =>{
 
         }
         if(!inView){
-            head.start({y:'-200vw'});
-            title.start({x:'200vw'});
-            describe.start({x:'-200vw'});
-            card_right.start({x:'200vw'});
-            card_left.start({x:'-200vw'});
-            card_middle.start({y:'200vw'});
+            head.start({y:'-200vw',transition:{
+                    type: 'spring' , duration:2,bounce:0.15
+                }});
+            title.start({x:'200vw',transition:{
+                    type: 'spring' , duration:2,bounce:0.15
+                }});
+            describe.start({x:'-200vw',transition:{
+                    type: 'spring' , duration:2,bounce:0.15
+                }});
+            card_right.start({x:'200vw',transition:{
+                    type: 'spring' , duration:2,bounce:0.15
+                }});
+            card_left.start({x:'-200vw',transition:{
+                    type: 'spring' , duration:2,bounce:0.15
+                }});
+            card_middle.start({y:'200vw',transition:{
+                    type: 'spring' , duration:2,bounce:0.15
+                }});
 
         }
-        console.log(inView);
     },[inView]);
 
 

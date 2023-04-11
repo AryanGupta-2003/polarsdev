@@ -1,0 +1,72 @@
+.hireus-section{
+    height: 25vw;
+    width: 100%;
+    background: url('../assets/img/abcd.jpg');
+    background-size : cover;
+}
+
+.content-hire{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title-hire{
+    padding-top: 4% ;
+    font-size: 55px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.desc-hire{
+    padding-top: 4% ;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(213, 211, 211);
+    font-weight: 450;
+
+}
+
+.hire_btn {
+    /* display: inline-block; */
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    user-select: none;
+    outline: none;
+    border-radius: 0.125rem;
+    text-transform: unset;
+    transition: all 0.3s ease-in-out;
+    margin-top: 2.5vw;
+    margin-left: 45%;
+    
+}
+.hire_btn-inline {
+    display: inline-flex;
+  
+}
+.hire_btn-darken {
+    
+    color: var(--color-white-100);
+    background-color: #0ab291;
+    box-shadow: var(--shadow-medium);
+    border: solid !important;
+   border-color: #0ab291 !important;
+   border-width: 2px !important;
+   padding: 0.95rem 2.2rem;
+}
+.hire_btn-darken:hover{
+   border: solid !important;
+   border-color: #0ab291 !important;
+   border-width: 2px !important;
+   color: var(--color-white-100);
+   transform: rotate(5deg);
+   transition: all 0.5s ease-in-out 0s;
+   background-color: #82a8a000;
+}

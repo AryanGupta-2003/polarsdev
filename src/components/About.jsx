@@ -13,10 +13,12 @@ const About = () =>{
     const title = useAnimation();
     const card_left = useAnimation();
     const card_right= useAnimation();
-    const button= useAnimation();
+    const buttonz= useAnimation();
     const divider= useAnimation();
+    var setflag=true;
     useEffect(()=>{
         if(inView){
+            setflag=false;
             head.start({
                 x:0,
                 transition:{
@@ -41,10 +43,10 @@ const About = () =>{
                     type: 'spring' , duration:4,bounce:0.15
                 }
             });
-            button.start({
+            buttonz.start({
                 y:0,
                 transition:{
-                    type: 'spring' , duration:4,bounce:0.15
+                    type: 'spring' , duration:2,bounce:0.15
                 }
             });
             divider.start({
@@ -55,15 +57,26 @@ const About = () =>{
             });
 
         }
-        if(!inView){
-            head.start({x:'-200vw'});
-            title.start({x:'200vw'});
-            divider.start({y:'-200vw'});
-            button.start({y:'200vw'});
-            card_right.start({x:'200vw'});
-            card_left.start({x:'-200vw'});
+        if(setflag && !inView){
+            head.start({x:'-100vw',transition:{
+                    type: 'spring' , duration:1.5,bounce:0.15
+                }});
+            title.start({x:'100vw',transition:{
+                    type: 'spring' , duration:1.5,bounce:0.15
+                }});
+            divider.start({y:'-100vw',transition:{
+                    type: 'spring' , duration:1.5,bounce:0.15
+                }});
+            buttonz.start({y:'100vw',transition:{
+                    type: 'spring' , duration:1.5,bounce:0.15
+                }});
+            card_right.start({x:'100vw',transition:{
+                    type: 'spring' , duration:1.5,bounce:0.15
+                }});
+            card_left.start({x:'-100vw',transition:{
+                    type: 'spring' , duration:1.5,bounce:0.15
+                }});
         }
-        console.log(inView);
     },[inView]);
 
     return (
@@ -89,7 +102,7 @@ const About = () =>{
                     </motion.div>
                     
                 </div>
-                <motion.button className="btn btn-darken btn-inline btn-about" animate={button}>
+                <motion.button className="btn btn-darken btn-inline btn-about" animate={buttonz}>
                         Our Projects<i className="bx bx-right-arrow-alt"></i>
                     </motion.button>
             </div>
