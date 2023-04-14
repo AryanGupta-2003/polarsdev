@@ -1,56 +1,21 @@
-
-  
-  /*-=-=-=-=-=-=-=-=-=-=-=- */
-  /* Column Grids */
-  /*-=-=-=-=-=-=-=-=-=-=-=- */
-  .col_half {
-    width: 49%;
-  }
-  .col_third {
-    width: 32%;
-  }
   .col_fourth {
     width: 25.5%;
-     
-  }
-  .col_fifth {
-    width: 18.4%;
-  }
-  .col_sixth {
-    width: 15%;
-  }
-  .col_three_fourth {
-    width: 74.5%;
-  }
-  .col_twothird {
-    width: 66%;
-  }
-  .col_half,
-  .col_third,
-  .col_twothird,
-  .col_fourth,
-  .col_three_fourth,
-  .col_fifth {
-    position: relative;
+	position: relative;
     display: inline;
     display: inline-block;
+     
   }
-  .end {
-    margin-right: 0 !important;
-  }
-  /* Column Grids End */
+
 
   .wrapper {
-    width: 40%;
-    margin: 30px auto;
+    width: 45%;
+	float: right;
     position: relative;
     background-color: #000000;
     border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    top:50%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin-right:3% !important;
-    margin-top: 6%;
 	border: solid;
 	border-color: #ffffff !important;
 	border-width: 4px !important;
@@ -74,11 +39,18 @@
 	display: flex;
 	flex-direction: row;
 	padding-left: 40%;
+	padding-top: 5%;
+	padding-bottom: 5%;
   }
   .info{
 	color: rgb(255, 2, 175);
 	font-size: 20px;
 	
+}
+.welcome-head{
+	font-size: 80px;
+	color: #ffab07;
+	font-weight:700;
 }
   .count-text {
     font-size: 15px;
@@ -109,35 +81,6 @@
 }
 
 /* ------------------bannar------------------------ */
-
- :root {
-	 --color-white-100: #fafafa;
-	 --color-white-200: #e4e6e7;
-	 --color-white-300: #c9cccf;
-	 --color-white-400: #a1a6aa;
-	 --color-white-500: #798086;
-	 --color-white-600: #555a5e;
-	 --color-black-100: #12161c;
-	 --color-black-200: #101419;
-	 --color-black-300: #0c0f13;
-	 --color-black-400: #0c0f13;
-	 --color-black-500: #080a0c;
-	 --color-black-600: #060709;
-	 --color-black-700: #040506;
-	 --color-black-800: #020303;
-	 --color-blue-100: #dcebfe;
-	 --color-blue-200: #bedbfe;
-	 --color-blue-300: #91c3fd;
-	 --color-blue-400: #61a6fa;
-	 --color-blue-500: #3c83f6;
-	 --color-blue-600: #2463eb;
-	 --color-blue-700: #1d4fd7;
-	 --color-blue-800: #1e3fae;
-	 --color-blue-900: #1e3b8a;
-	 --shadow-small: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-	 --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-	 --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
 
 
  main {
@@ -175,24 +118,16 @@
 	 margin: 0 auto; 
 }
 
- .heading-xl {
-	 font-family: inherit;
-	 font-size: clamp(2.648rem, 6vw, 4.241rem);
-	 font-weight: 700;
-	 line-height: 1.15;
-	 letter-spacing: -1px;
-     font-size: 100px !important;
-	 
-}
+ 
 
  .paragraph {
 	 font-family: inherit;
-     font-size: 30px;
+     font-size: 50px;
 	 line-height: inherit;
 	 max-width: 100%;
 	 height: auto;
 	 text-transform: unset;
-	 color: var(--color-white-200);
+	 color: rgb(210, 208, 208);
 }
  .btn {
 	 display: inline-block;
@@ -218,7 +153,7 @@
 }
  .btn-darken {
 	 
-	 color: var(--color-white-100);
+	 color: #fafafa;
 	 background-color: #0ab291;
 	 box-shadow: var(--shadow-medium);
 	 border: solid !important;
@@ -233,7 +168,7 @@
 	border: solid !important;
 	border-color: #0ab291 !important;
 	border-width: 3px !important;
-	color: var(--color-white-100);
+	color: #fafafa;
 	transform: rotate(5deg);
     transition: all 0.5s ease-in-out 0s;
 }
@@ -306,8 +241,8 @@
  .banner-links > * {
 	 font-size: 1.8rem;
 	 line-height: 1.25;
-	 color: var(--color-white-100);
-	 
+	 color: #fafafa;
+
 }
  .banner-links::before {
 	 position: absolute;
@@ -347,104 +282,10 @@
 	 background: rgb(255, 2, 175);
 }
  
-.wordContainer {
-	overflow: hidden;
+.welcome-bt-pl{
+	width: 50% !important;
+	height: auto !important;
 }
-
-@keyframes up {
-	100% {
-		transform: translateY(0%);
-	}
-}
-
-/* Then, every single word gets animated up */
-.word {
-	animation: up 2.2s;
-	animation-delay: 1.2s;
-	animation-fill-mode: forwards;
-	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-	transform: translateY(115%);
-	color:linear-gradient(221deg, rgba(2,113,17,1) 0%, rgba(255,255,255,1) 66%);
-	 background: linear-gradient(221deg, rgba(2,113,17,1) 0%, rgb(187, 245, 195) 85%);
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-}
-
-
-.textWrapper {
-	font-weight: 800;
-	font-size: 66px;
-	color: rgb(255, 255, 255);
-}
-@media (max-width: 798px) {
-	.textWrapper {
-		font-size: 50px;
-	}
-}
-
-
-.wordContainerdup {
-	overflow: hidden;
-}
-
-@keyframes up {
-	100% {
-		transform: translateY(0%);
-	}
-}
-
-/* Then, every single word gets animated up */
-.itemdup {
-	animation: up 2.2s;
-	animation-delay: 1.2s;
-	animation-fill-mode: forwards;
-	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-	transform: translateY(200%);
-}
-
-@keyframes up {
-	100% {
-		transform: translateY(0%);
-	}
-}
-
-/* Then, every single word gets animated up */
-.itemdright {
-	animation: right 2.2s;
-	animation-delay: 1.2s;
-	animation-fill-mode: forwards;
-	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-	transform: translateX(200%);
-}
-
-@keyframes right {
-	100% {
-		transform: translateX(0%);
-	}
-}
-
-.itemdleft {
-	animation: left 2.2s;
-	animation-delay: 1.2s;
-	animation-fill-mode: forwards;
-	animation-timing-function: cubic-bezier(0.075, 1.12, 0.165, 1);
-	transform: translateX(-200%);
-}
-
-@keyframes left {
-	100% {
-		transform: translateX(0%);
-	}
-}
-
-
-
-
-
-
-
-
-
 .video-play-button {
 	position: relative;
 	z-index: 99 !important;
@@ -452,9 +293,9 @@
 	box-sizing: content-box;
 	width: 16px;
 	height: 22px;
-	margin-left: 2%;
 	border-radius: 50%;
 	padding: 9px 10px 9px 14px;
+	margin-left: 5%;
   }
   @media (max-width: 798px) {
 	.video-play-button {
@@ -469,7 +310,6 @@
 	left: 50%;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	display: block;
 	width: 40px;
 	height: 40px;
 	background: #ef09d8;
@@ -585,4 +425,29 @@
 	box-shadow: 0 0 15px #2278c9;
   }
 
-/* ----------------animations-------------- */
+
+
+  @media (max-width: 798px) {
+	.welcome-head {
+		font-size:55px;
+		text-align: center !important;
+		color: #ffab07;
+		font-weight:700;
+	}
+	.paragraph {
+		font-size: 20px;
+		max-width: 100%;
+		height: auto;
+		text-transform: unset;
+		color: rgb(210, 208, 208);
+   }
+   .video-play-button {
+	margin-left: 10%;
+  }
+  .banner-inner{
+	margin-left: 10%;
+  }
+  .welcome-bt-pl{
+	width: 100% !important;
+}
+  }

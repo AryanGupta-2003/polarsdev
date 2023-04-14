@@ -125,61 +125,38 @@ class Welcome extends Component{
     }
     render(){
         return (
-            <div>
+            <div className='welcome-section'>
             <div id="video-overlay" class="video-overlay">
                 <a class="video-overlay-close">&times;</a>
             </div>
 
             <main className="main">
-            <section className="section banner banner-section">
-                <div className="container banner-column">
-
-                
-
-
-                    <div className="banner-inner">
-                        {/* <h1 className="heading-xl">PolarsDev</h1> */}
-                    <div className="textWrapper wordContainer word">
-                        <div className="wordContainer">
-                            <div className="word">
-                                <p>PolarsDev</p>
+                <section className="section banner banner-section">
+                    <div className="container banner-column">
+                        <div className="banner-inner">
+                            <div className="welcome-head">PolarsDev</div>
+                            <div className="paragraph">Your Polaris for Developement</div>
+                            <div className='welcome-bt-pl'>
+                            <button className="btn btn-darken btn-inline">
+                                Our Projects<i className="bx bx-right-arrow-alt"></i>
+                                </button>    
+                                <a id="play-video" class="video-play-button" href="#"> <span></span></a>
                             </div>
                         </div>
-				    </div>
-                    <div className="itemWrapper  "><div className="wordContainerdup"><div className="itemdright">
-                        <p className="paragraph">
-                        Your Polaris for Developement
-                        </p>
-                        </div></div></div>
                         
-                        <div className="itemWrapper  "><div className="wordContainerdup"><div className="itemdleft">
-                                    <button className="btn btn-darken btn-inline">
-                                    Our Projects<i className="bx bx-right-arrow-alt"></i>
-                                    </button>    
-                        </div></div></div>
-                        
-                    </div>
-                    <div className="itemWrapper  "><div className="wordContainerdup"><div className="itemdright">
-                    <img className="banner-image" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="banner"></img>
-                    </div></div></div>
-                    
-                    <div className="itemdright">
-                        <a id="play-video" class="video-play-button" href="#"> <span></span></a>
-                    </div>
+                       
 
+                        {/* <div className="itemWrapper  "><div className="wordContainerdup"><div className="itemdright">
+                        <img className="banner-image" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="banner"></img>
+                        </div></div></div> */}
+                        
                         <div className="banner-links">
                             <a href="#" title=""><i className="bx bxl-facebook banner-fb"></i></a>
                             <a href="#" title=""><i className="bx bxl-instagram banner-ins"></i></a>
                             <a href="#" title=""><i className="bx bxl-twitter banner-tw"></i></a>
                         </div>
 
-
-                </div>
-            
-            <div className="itemWrapper  ">
-                        <div className="wordContainerdup">
-                            <div className="itemdright">
-                                
+                     </div>
                            
             {/* -----------------counter------------------- */}
                 <div className="wrapper">
@@ -208,9 +185,7 @@ class Welcome extends Component{
                     </div>                
                 </div>
                 {/* -----------------counter------------------- */}
-                </div>
-                        </div>
-				    </div>
+                
                     </section>
                 </main>
             </div>
