@@ -1,131 +1,86 @@
 import React,{Component} from 'react';
-import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 import "../pages/welcome.css";
+import { motion } from "framer-motion"
+import {useInView} from 'react-intersection-observer'
+import { useEffect } from 'react';
+import { useAnimation } from 'framer-motion';
+import CountUp from 'react-countup';
 
-class Welcome extends Component{
-    componentDidMount(){
-        $('#play-video').on('click', function(e){
-            e.preventDefault();
-            $('#video-overlay').addClass('open');
-            $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>');
-          });
-          
-          $('.video-overlay, .video-overlay-close').on('click', function(e){
-            e.preventDefault();
-            close_video();
-          });
-          
-          $(document).keyup(function(e){
-            if(e.keyCode === 27) { close_video(); }
-          });
-          
-          function close_video() {
-            $('.video-overlay.open').removeClass('open').find('iframe').remove();
-          };
-          
-        (function ($) {
-            $.fn.countTo = function (options) {
-                options = options || {};
-                
-                return $(this).each(function () {
-                    // set options for current element
-                    var settings = $.extend({}, $.fn.countTo.defaults, {
-                        from:            $(this).data('from'),
-                        to:              $(this).data('to'),
-                        speed:           $(this).data('speed'),
-                        refreshInterval: $(this).data('refresh-interval'),
-                        decimals:        $(this).data('decimals')
-                    }, options);
-                    
-                    // how many times to update the value, and how much to increment the value on each update
-                    var loops = Math.ceil(settings.speed / settings.refreshInterval),
-                        increment = (settings.to - settings.from) / loops;
-                    
-                    // references & variables that will change with each update
-                    var self = this,
-                        $self = $(this),
-                        loopCount = 0,
-                        value = settings.from,
-                        data = $self.data('countTo') || {};
-                    
-                    $self.data('countTo', data);
-                    
-                    // if an existing interval can be found, clear it first
-                    if (data.interval) {
-                        clearInterval(data.interval);
-                    }
-                    data.interval = setInterval(updateTimer, settings.refreshInterval);
-                    
-                    // initialize the element with the starting value
-                    render(value);
-                    
-                    function updateTimer() {
-                        value += increment;
-                        loopCount++;
-                        
-                        render(value);
-                        
-                        if (typeof(settings.onUpdate) == 'function') {
-                            settings.onUpdate.call(self, value);
-                        }
-                        
-                        if (loopCount >= loops) {
-                            // remove the interval
-                            $self.removeData('countTo');
-                            clearInterval(data.interval);
-                            value = settings.to;
-                            
-                            if (typeof(settings.onComplete) == 'function') {
-                                settings.onComplete.call(self, value);
-                            }
-                        }
-                    }
-                    
-                    function render(value) {
-                        var formattedValue = settings.formatter.call(self, value, settings);
-                        $self.html(formattedValue);
+
+const Welcome = () =>{  
+
+        const {ref,inView}=useInView({
+            threshold: 0
+        });
+        const head = useAnimation();
+        const title = useAnimation();
+        const card_left = useAnimation();
+        const card_right= useAnimation();
+        const buttonz= useAnimation();
+        const divider= useAnimation();
+        useEffect(()=>{
+            if(inView){
+                head.start({
+                    x:0,
+                    transition:{
+                        type: 'spring' , duration:4,bounce:0.15
                     }
                 });
-            };
-            
-            $.fn.countTo.defaults = {
-                from: -2,               // the number the element should start at
-                to: 0,                 // the number the element should end at
-                speed: 1000,           // how long it should take to count between the target numbers
-                refreshInterval: 10,  // how often the element should be updated
-                decimals: 0,           // the number of decimal places to show
-                formatter: formatter,  // handler for formatting the value before rendering
-                onUpdate: null,        // callback method for every time the element is updated
-                onComplete: null       // callback method for when the element finishes updating
-            };
-            
-            function formatter(value, settings) {
-                return value.toFixed(settings.decimals);
+                title.start({
+                    x:0,
+                    transition:{
+                        type: 'spring' , duration:4,bounce:0.15
+                    }
+                });
+                card_left.start({
+                    x:0,
+                    transition:{
+                        type: 'spring' , duration:4,bounce:0.15
+                    }
+                });
+                card_right.start({
+                    x:0,
+                    transition:{
+                        type: 'spring' , duration:4,bounce:0.15
+                    }
+                });
+                buttonz.start({
+                    y:0,
+                    transition:{
+                        type: 'spring' , duration:2,bounce:0.15
+                    }
+                });
+                divider.start({
+                    y:0,
+                    transition:{
+                        type: 'spring' , duration:4,bounce:0.15
+                    }
+                });
+    
             }
-        }(jQuery));
-        
-        jQuery(function ($) {
-          // custom formatting example
-          $('.count-number').data('countToOptions', {
-            formatter: function (value, options) {
-              return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+            if( !inView){
+                head.start({x:'-100vw',transition:{
+                        type: 'spring' , duration:1.5,bounce:0.15
+                    }});
+                
+                buttonz.start({y:'-100vw',transition:{
+                        type: 'spring' , duration:1.5,bounce:0.15
+                    }});
+                card_right.start({x:'-300vw',transition:{
+                        type: 'spring' , duration:1.5,bounce:0.15
+                    }});
+                card_left.start({x:'-100vw',transition:{
+                        type: 'spring' , duration:1.5,bounce:0.15
+                    }});
             }
-          });
-          
-          // start all the timers
-          $('.timer').each(count);  
-          
-          function count(options) {
-            var $this = $(this);
-            options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-            $this.countTo(options);
-          }
-        });
-    }
-    render(){
+            console.log(inView);
+        },[inView]);
+    
+    
+    
         return (
-            <div className='welcome-section'>
+            <div ref={ref} className='welcome-section'>
             <div id="video-overlay" class="video-overlay">
                 <a class="video-overlay-close">&times;</a>
             </div>
@@ -134,14 +89,14 @@ class Welcome extends Component{
                 <section className="section banner banner-section">
                     <div className="container banner-column">
                         <div className="banner-inner">
-                            <div className="welcome-head">PolarsDev</div>
-                            <div className="paragraph">Your Polaris for Developement</div>
-                            <div className='welcome-bt-pl'>
+                            <motion.div className="welcome-head" animate={head}>PolarsDev</motion.div>
+                            <motion.div className="paragraph" animate={head}>Your Polaris for Developement</motion.div>
+                            <motion.div animate={buttonz} className='welcome-bt-pl'>
                             <button className="btn btn-darken btn-inline">
                                 Our Projects<i className="bx bx-right-arrow-alt"></i>
                                 </button>    
                                 <a id="play-video" class="video-play-button" href="#"> <span></span></a>
-                            </div>
+                            </motion.div>
                         </div>
                         
                        
@@ -150,20 +105,20 @@ class Welcome extends Component{
                         <img className="banner-image" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="banner"></img>
                         </div></div></div> */}
                         
-                        <div className="banner-links">
+                        <motion.div className="banner-links" animate={card_right}>
                             <a href="#" title=""><i className="bx bxl-facebook banner-fb"></i></a>
                             <a href="#" title=""><i className="bx bxl-instagram banner-ins"></i></a>
                             <a href="#" title=""><i className="bx bxl-twitter banner-tw"></i></a>
-                        </div>
+                        </motion.div>
 
                      </div>
                            
             {/* -----------------counter------------------- */}
-                <div className="wrapper">
+                <motion.div animate={card_right} className="wrapper">
                     <div className="counter col_fourth" >
                     <i className="fa fa-code fa-2x"></i>
                     <div className="inos">
-                        <h2 className=" count-title timer count-number" data-to="5" data-speed="3400"></h2><h3 className="info">+</h3>
+                        <CountUp end={5} duration={3} start={-1} className="timer count-title count-number" ></CountUp><h3 className="info">+</h3>
                     </div>
                     <p className="count-text ">Projects Done</p>
                     </div>
@@ -171,7 +126,7 @@ class Welcome extends Component{
                     <div className="counter col_fourth">
                         <i className="fa fa-coffee fa-2x"></i>
                         <div className="inos">
-                            <h2 className="timer count-title count-number" data-to="5" data-speed="3400"></h2><h3 className="info">months</h3>
+                            <CountUp end={5} duration={3} start={-1} className="timer count-title count-number" ></CountUp><h3 className="info">months</h3>
                         </div>
                          <p className="count-text ">Experience</p>
                     </div>
@@ -179,11 +134,11 @@ class Welcome extends Component{
                     <div className="counter col_fourth">
                     <i className="fa fa-lightbulb-o fa-2x"></i>
                     <div className="inos">
-                    <h2 className="timer count-title count-number" data-to="10" data-speed="3400"></h2><h3 className="info">+</h3>
+                    <CountUp end={5} duration={3} start={-1} className="timer count-title count-number" ></CountUp><h3 className="info">+</h3>
                     </div>
                     <p className="count-text ">People under us</p>
                     </div>                
-                </div>
+                </motion.div>
                 {/* -----------------counter------------------- */}
                 
                     </section>
@@ -192,6 +147,6 @@ class Welcome extends Component{
 
         );
     }
-}
+
 
 export default Welcome;
