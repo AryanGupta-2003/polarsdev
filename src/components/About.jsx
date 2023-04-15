@@ -84,7 +84,7 @@ const About = () =>{
         <div ref={ref} className="about-section">
             <div className="content">
             <motion.div className="content-heading" animate={head}>
-            ABOUT POLARSDEV
+            WE ARE
             </motion.div>
                 <motion.div className="content-catch" animate={title}>PASSIONATELY CREATIVE</motion.div>
                 <motion.div className="content-para" animate={title}><div className="para-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae obcaecati aliquid perspiciatis dolor. Nulla placeat exercitationem incidunt adipisci fugiat, modi, veniam consectetur rerum quia esse iusto quae, accusamus voluptate neque reiciendis quaerat totam impedit pariatur ducimus odio alias facere consequuntur. Quam ea officia iste omnis eveniet velit dolores dolore molestias? Distinctio nisi amet illo culpa consequatur blanditiis, ratione, commodi ab necessitatibus accusamus earum repudiandae consequuntur debitis, repellendus tempora itaque.</div></motion.div>

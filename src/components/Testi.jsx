@@ -12,8 +12,8 @@ import quote from "../assets/img/quote.png";
 const Testi = () =>{
     return (
         <div className='testi-section'>
-        <div className='team-title'  >THE TEAM</div>
-        <div className='team-catch' >OUR DEVELOPEMENT WIZARDS</div>
+        <div className='team-title'  >TESTIMONIALS</div>
+        <div className='team-catch' >Review's of people we have worked with</div>
         <Carousel
         showArrows={false}
         infiniteLoop={true}
@@ -21,6 +21,8 @@ const Testi = () =>{
         showStatus={false}
         autoPlay={true}
         interval={3050}
+        preventMovementUntilSwipeScrollTolerance={true} 
+        swipeScrollTolerance={50}
       >
         <div>
           

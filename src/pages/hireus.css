@@ -1,5 +1,5 @@
 .hireus-section{
-    height: 25vw;
+    height: auto;
     width: 100%;
     background: url('../assets/img/abcd.jpg');
     background-size : cover;
@@ -69,4 +69,36 @@
    transform: rotate(5deg);
    transition: all 0.5s ease-in-out 0s;
    background-color: #82a8a000;
+}
+
+
+@media (max-width: 798px) {
+    .hireus-section{
+        height: auto;
+        background: url('../assets/img/abcd.jpg');
+        background-size : cover;
+    }
+    
+    .content-hire{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .title-hire{
+        font-size: 40px;
+        font-weight: 800;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .desc-hire{
+        font-size: 15px;    
+    }
+    
+    .hire_btn {
+        margin-left: 30%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+
+    }
 }

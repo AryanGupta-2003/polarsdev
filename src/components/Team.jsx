@@ -77,7 +77,7 @@ const Team = () =>{
             
 
         }
-        if(setflag && !inView && width>800){
+        if(setflag && !inView && width>1000){
             
             head.start({x:'-100vw',transition:{
                     type: 'spring' , duration:1.5,bounce:0.15
@@ -109,13 +109,13 @@ const Team = () =>{
         <div ref={ref}>
         <div ref={elementRef}  className='team-section'>
 
-        <motion.div className='team-title' animate={head} >THE TEAM</motion.div>
+        <motion.div className='team-title' animate={head} >LET'S MEET</motion.div>
         <motion.div className='team-catch' animate={title}>OUR DEVELOPEMENT WIZARDS</motion.div>
         <motion.div className='team-desc' animate={desc}>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam sunt quibusdam deserunt corrupti expedita quos repellat, cupiditate dolores voluptatum quasi!</motion.div>
 
             <ul class="cards-team">
             <motion.li animate={cardleft}>
-                <a href="" class="card-team">
+                <div href="" class="card-team">
                 <img src="https://wallpapercave.com/wp/wp4975694.jpg" class="card-team__image" alt="" />
                 <div class="card-team__overlay">
                     <div class="card-team__header">
@@ -128,10 +128,10 @@ const Team = () =>{
                     </div>
                     <p class="card-team__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
                 </div>
-                </a>
+                </div>
             </motion.li>
             <motion.li animate={carddown}>
-                <a href="" class="card-team">
+                <div href="" class="card-team">
                 <img src="https://wallpapercave.com/wp/wp4975694.jpg" class="card-team__image" alt="" />
                 <div class="card-team__overlay">        
                     <div class="card-team__header">
@@ -144,10 +144,10 @@ const Team = () =>{
                     </div>
                     <p class="card-team__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
                 </div>
-                </a>
+                </div>
             </motion.li>
             <motion.li animate={cardup}>
-                <a href="" class="card-team">
+                <div href="" class="card-team">
                 <img src="https://wallpapercave.com/wp/wp4975694.jpg" class="card-team__image" alt="" />
                 <div class="card-team__overlay">
                     <div class="card-team__header">
@@ -160,10 +160,10 @@ const Team = () =>{
                     </div>
                     <p class="card-team__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
                 </div>
-                </a>
+                </div>
                 </motion.li>
             <motion.li animate={carddown}>
-                <a href="" class="card-team">
+                <div href="" class="card-team">
                 <img src="https://wallpapercave.com/wp/wp4975694.jpg" class="card-team__image" alt="" />
                 <div class="card-team__overlay">
                     <div class="card-team__header">
@@ -176,10 +176,10 @@ const Team = () =>{
                     </div>
                     <p class="card-team__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
                 </div>
-                </a>
+                </div>
             </motion.li> 
             <motion.li animate={cardright}>
-                <a href="" class="card-team">
+                <div href="" class="card-team">
                 <img src="https://wallpapercave.com/wp/wp4975694.jpg" class="card-team__image" alt="" />
                 <div class="card-team__overlay">
                     <div class="card-team__header">
@@ -192,7 +192,7 @@ const Team = () =>{
                     </div>
                     <p class="card-team__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
                 </div>
-                </a>
+                </div>
             </motion.li>    
             </ul>
         </div>

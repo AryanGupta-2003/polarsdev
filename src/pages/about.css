@@ -9,6 +9,7 @@
   background-image: url('https://images.wallpaperscraft.com/image/single/paint_stains_mixing_140283_3840x2160.jpg');
   background-size : cover;
 }
+
 .about-section::-webkit-scrollbar {
   display: none;
 }
@@ -52,7 +53,6 @@
   font-family: 'Futura', 'Century Gothic', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  
 }
 
 
@@ -109,70 +109,59 @@
 
 
 
-/* ----------------animations-------------- */
+@media (max-width: 850px) {
+  .about-section{
+    height: 140vw;
+    width: 100%;
+    padding-top: 30px ;
+    
+  }
+  .content{
+    margin-top: 3% ;
+    padding-left: 2%;
+    margin-bottom:1% ;
+    
+    margin-left:5%;
+    margin-right: 5%;
+  }
+  .content-heading{
+    font-size: 27px;
+    
+    font-weight: 600;
+    text-align: center;
+  }
+  .content-catch{
+  font-size: 40px;
+  text-align: center;
 
-.textWrapper {
-font-weight: 800;
-font-size: 66px;
-color: rgb(255, 255, 255);
-}
-@media (max-width: 798px) {
-.textWrapper {
-  font-size: 50px;
-}
-}
+  }
+  .content-para{
+  overflow-x: hidden !important;
+  font-size: 17px;
+  width:auto;
+  text-align: center;
+  }
 
+  .card-container {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
 
-.wordContainerdup {
-overflow: hidden;
-}
-
-@keyframes up {
-100% {
-  transform: translateY(0%);
-}
-}
-
-/* Then, every single word gets animated up */
-.itemdup {
-animation: up 1.1s;
-animation-delay: 1.2s;
-animation-fill-mode: forwards;
-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-transform: translateY(200%);
-}
-
-@keyframes up {
-100% {
-  transform: translateY(0%);
-}
-}
-
-/* Then, every single word gets animated up */
-.itemdright {
-animation: right 1.1s;
-animation-delay: 1.2s;
-animation-fill-mode: forwards;
-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-transform: translateX(200%);
-}
-
-@keyframes right {
-100% {
-  transform: translateX(0%);
-}
-}
-
-.itemdleft {
-animation: left 1.1s;
-animation-delay: 1.2s;
-animation-fill-mode: forwards;
-animation-timing-function: cubic-bezier(0.075, 1.12, 0.165, 1);
-transform: translateX(-200%);
-}
-
-@keyframes left {
-100% {
-  transform: translateX(0%);
-}
+  .card {
+    
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    backdrop-filter: blur(2px);
+  
+  }
+ 
+  .card-heading{
+    text-align: center;
+  }
+  .card-para{
+    
+    text-align: center;
+    font-size: 12px;
+  }
+  
 }

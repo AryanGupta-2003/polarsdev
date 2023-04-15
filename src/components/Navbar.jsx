@@ -1,21 +1,9 @@
 import "../pages/navbar.css";
 import React, { useState } from "react";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaYoutubeSquare,
-} from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
-import $ from 'jquery';
-import { NavLink } from "react-router-dom";
+
 
 const Navbar = () => {
     const jQueryCode=()=>{
-        // $(document).ready(function(){
-        //     $('#nav-icon1').click(function(){
-        //         $(this).toggleClass('open');
-        //     });
-        // });
         setShowMediaIcons(!showMediaIcons);
         setnavanim(!navanim);
         console.log(navanim);
@@ -53,6 +41,7 @@ const Navbar = () => {
             <li>
               <a href="#">contact</a>
             </li>
+
           </ul>
         </div>
 
