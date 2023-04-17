@@ -91,6 +91,7 @@ const Welcome = () =>{
                         <div className="banner-inner">
                             <motion.div className="welcome-head" animate={head}>PolarsDev</motion.div>
                             <motion.div className="paragraph" animate={head}>Your Polaris for Developement</motion.div>
+                            <motion.div className="welcome-desc" animate={head}>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad sed deserunt distinctio earum commodi, odit eos reiciendis sit pariatur accusamus aut iusto porro quam modi delectus at! Ad, accusamus!</motion.div>
                             <motion.div animate={buttonz} className='welcome-bt-pl'>
                             <button className="btn btn-darken btn-inline">
                                 Our Projects<i className="bx bx-right-arrow-alt"></i>

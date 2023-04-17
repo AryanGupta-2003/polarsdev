@@ -35,7 +35,7 @@
 
   .cards-team {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin: 4rem;
     padding: 0;
@@ -49,7 +49,6 @@
     border-radius: calc(30 * 1px);
     overflow: hidden;
     text-decoration: none;
-    height: 100%;
   }
   
   .card-team__image {

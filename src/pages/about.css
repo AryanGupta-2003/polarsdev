@@ -107,7 +107,9 @@
   margin-top: 2% !important;
 }
 
-
+.for-ref{
+  width:100%;
+}
 
 @media (max-width: 850px) {
   .about-section{

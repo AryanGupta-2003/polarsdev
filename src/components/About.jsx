@@ -2,9 +2,20 @@ import React,{Component} from 'react';
 import "../pages/about.css";
 import { motion } from "framer-motion"
 import {useInView} from 'react-intersection-observer'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAnimation } from 'framer-motion';
+import {useRef} from 'react';
+
+
+
 const About = () =>{
+
+    const [width, setWidth] = useState(0);
+    const elementRef = useRef(null);
+
+    useEffect(() => {
+        setWidth(elementRef.current.getBoundingClientRect().width);
+    }, []);
 
     const {ref,inView}=useInView({
         threshold: 0.45
@@ -82,6 +93,7 @@ const About = () =>{
     return (
         
         <div ref={ref} className="about-section">
+        <div ref={elementRef} className='for-reference'></div>
             <div className="content">
             <motion.div className="content-heading" animate={head}>
             WE ARE
